@@ -197,3 +197,21 @@ img {
   gap: 20px;
   font-size: 20px;
 }
+
+.current-chat {
+  background-image: url(../img/m5BEg2K4OR4.png);
+  background-color: #103529;
+  display: flex;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  color: rgb(226, 12, 12);
+}

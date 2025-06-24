@@ -77,6 +77,11 @@ const app = new Vue({
         messages: [
           {
             date: '15:30',
+            text: 'Hey, ciao!',
+            status: 'sent'
+          },
+          {
+            date: '15:30',
             text: 'Lo sai che ha aperto una nuova pizzeria?',
             status: 'sent'
           },
@@ -89,6 +94,9 @@ const app = new Vue({
       },
     ],
   },
+  methods: {
+
+  }
 })
 
 console.log(app)

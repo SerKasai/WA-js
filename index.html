@@ -55,29 +55,39 @@
           <img id="image" :src="element.avatar" alt="element.name">
           <div id="last-mex">
             <h2>{{element.name}}</h2>
-            <span>{{element.messages[1].text}}</span>
+            <span>{{element.messages[2].text}}</span>
           </div>
           <div>
-            <span id="hour">{{element.messages[1].date}}</span>
+            <span id="hour">{{element.messages[2].date}}</span>
           </div>
         </li>
       </ul>
     </div>
 
-    <div class="active-chat" v-for="(element) in contacts" :key="element.name" v-if="element.visible">
-      <div class="active-contacts">
-        <div class="active-profile">
-          <img id="active-image" :src="element.avatar" alt="element.name">
-          <h2>{{element.name}}</h2>
+    <div class="main-page" v-for="(element, index) in contacts" :key="element.name" v-if="element.visible">
+
+      <div class="active-chat">
+        <div class="active-contacts">
+          <div class="active-profile">
+            <img id="active-image" :src="element.avatar" alt="element.name">
+            <h2>{{element.name}}</h2>
+          </div>
+          <div class="active-icons">
+            <i class="fa-solid fa-video" style="color: #ffffff;"></i>
+            <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+            <i class="fa-solid fa-ellipsis-vertical" style="color: #ffffff;"></i>
+          </div>
         </div>
-        <div class="active-icons">
-          <i class="fa-solid fa-video" style="color: #ffffff;"></i>
-          <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
-          <i class="fa-solid fa-ellipsis-vertical" style="color: #ffffff;"></i>
+      </div>
+      <div class="current-chat">
+        <div class="conversation">
+          <div class="contact-mex" v-for="(element, index) in contacts" v-if="element.messages[2].status === 'sent'">
+            {{element.messages[1].text}}
+          </div>
+          <div class="user-mex"></div>
         </div>
       </div>
     </div>
-    <div></div>
   </div>
 
 
