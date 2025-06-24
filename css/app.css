@@ -2,6 +2,8 @@
   margin: 0;
   bottom: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
+
 }
 
 .container {
@@ -48,7 +50,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   gap: 30px;
-  width: 500px;
+  width: 100%;
   justify-content: space-between;
   padding: 13px;
 }
@@ -61,12 +63,18 @@ body {
   flex-grow: 1;
 }
 
+.topbar-menu h2 {
+  font-size: 22px;
+  font-weight: 100;
+}
+
 .chat-menu {
   display: flex;
   flex-direction: column;
   padding: 15px;
   border-left: 1px solid grey;
   border-right: 1px solid grey;
+  max-width: 40%;
 }
 
 .search-bar {
@@ -106,4 +114,86 @@ body {
 .search-bar button:hover {
   background-color: #103529;
   color: #9FF0D3;
+}
+
+.chat-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  list-style: none;
+  color: white;
+  font-size: small;
+  padding: 10px;
+  row-gap: 5px;
+}
+
+#chat {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 0;
+  gap: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+img {
+  max-width: 10%;
+  border-radius: 50%;
+}
+
+#last-mex {
+  flex-grow: 1;
+}
+
+#last-mex span {
+  color: #A7A8A8;
+}
+
+#hour {
+  color: #A7A8A8;
+}
+
+.active-chat {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  width: 100%;
+  cursor: pointer;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  align-content: flex-start;
+  justify-content: space-between;
+}
+
+.active-chat h2 {
+  color: white;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.active-contacts {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.active-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.active-icons {
+  padding-right: 10px;
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
 }

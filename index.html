@@ -43,7 +43,7 @@
 
       <div class="search-bar">
         <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
-        <input type="search" name="search" id="search" placeholder="">
+        <input type="search" name="search" id="search" placeholder=" Cerca o avvia una nuova chat">
         <button>Tutte</button>
         <button>Da leggere</button>
         <button>Preferiti</button>
@@ -51,20 +51,32 @@
       </div>
 
       <ul class="chat-list">
-        <li id="chat" v-for="(element, index) in contacts">
-          <div id="image-div"><img src="{{element.avatar}}" alt=""></div>
+        <li id="chat" v-for="(element, index) in contacts" :key="element.name">
+          <img id="image" :src="element.avatar" alt="element.name">
           <div id="last-mex">
             <h2>{{element.name}}</h2>
             <span>{{element.messages[1].text}}</span>
           </div>
           <div>
-            <span>{{element.messages[1].date}}</span>
+            <span id="hour">{{element.messages[1].date}}</span>
           </div>
         </li>
       </ul>
     </div>
 
-    <div></div>
+    <div class="active-chat" v-for="(element) in contacts" :key="element.name" v-if="element.visible">
+      <div class="active-contacts">
+        <div class="active-profile">
+          <img id="active-image" :src="element.avatar" alt="element.name">
+          <h2>{{element.name}}</h2>
+        </div>
+        <div class="active-icons">
+          <i class="fa-solid fa-video" style="color: #ffffff;"></i>
+          <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+          <i class="fa-solid fa-ellipsis-vertical" style="color: #ffffff;"></i>
+        </div>
+      </div>
+    </div>
     <div></div>
   </div>
 
