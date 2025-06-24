@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="css/app.css">
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script src="https://kit.fontawesome.com/cfb2eccc9a.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;600&family=Vidaloka&display=swap"
+    rel="stylesheet" />
   <title>WhatsApp Web</title>
 </head>
 
@@ -27,6 +31,7 @@
       </div>
 
     </div>
+
     <div class="chat-menu">
       <div class="topbar-menu">
         <li style="color: #ffffff;">
@@ -35,16 +40,30 @@
         <li><i class="fa-brands fa-whatsapp" style="color: #ffffff;"></i></li>
         <li><i class="fa-solid fa-ellipsis-vertical" style="color: #ffffff;"></i></li>
       </div>
+
       <div class="search-bar">
         <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
-        <input type="search" name="contacts" id="contacts" placeholder="">
+        <input type="search" name="search" id="search" placeholder="">
         <button>Tutte</button>
         <button>Da leggere</button>
         <button>Preferiti</button>
         <button>Gruppi</button>
       </div>
-      <div class="chat-list"></div>
+
+      <ul class="chat-list">
+        <li id="chat" v-for="(element, index) in contacts">
+          <div id="image-div"><img src="{{element.avatar}}" alt=""></div>
+          <div id="last-mex">
+            <h2>{{element.name}}</h2>
+            <span>{{element.messages[1].text}}</span>
+          </div>
+          <div>
+            <span>{{element.messages[1].date}}</span>
+          </div>
+        </li>
+      </ul>
     </div>
+
     <div></div>
     <div></div>
   </div>
