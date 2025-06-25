@@ -42,7 +42,7 @@ const app = new Vue({
             status: 'received'
           },
           {
-            date: '16:35',
+            date: '15:35',
             text: 'Mi piacerebbe ma devo andare a fare la spesa.',
             status: 'sent'
           }
@@ -64,7 +64,7 @@ const app = new Vue({
             status: 'sent'
           },
           {
-            date: '16:15',
+            date: '12:15',
             text: 'Ah scusa!',
             status: 'received'
           }
@@ -86,7 +86,7 @@ const app = new Vue({
             status: 'sent'
           },
           {
-            date: '15:50',
+            date: 'Ieri',
             text: 'Sì, ma preferirei andare al cinema.',
             status: 'received'
           }

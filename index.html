@@ -80,11 +80,27 @@
         </div>
       </div>
       <div class="current-chat">
-        <div class="conversation">
-          <div class="contact-mex" v-for="(element, index) in contacts" v-if="element.messages[2].status === 'sent'">
-            {{element.messages[1].text}}
+        <div class="messages">
+          <div class="receive">
+            <div class="left-chat">
+              <p>Ciao come stai?</p>
+            </div>
+            <div class="left-chat">
+              <p>Ti disturbo?</p>
+            </div>
+            <div class="left-chat">
+              <p>Heyyyyy</p>
+            </div>
           </div>
-          <div class="user-mex"></div>
+          <div class="sent">
+            <div class="right-chat">
+              <p>No, dimmi pure</p>
+            </div>
+          </div>
+        </div>
+        <div class="input-mex">
+          <input type="text" id="writing" placeholder="Scrivi un messaggio">
+          <i class="fa-solid fa-arrow-turn-up"></i>
         </div>
       </div>
     </div>
