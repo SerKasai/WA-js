@@ -279,7 +279,7 @@ img {
   padding: 0 60px;
   display: flex;
   flex-grow: 1;
-  filter: brightness(0.5);
+  filter: brightness(0.7);
   flex-direction: column;
   justify-content: flex-end;
 }

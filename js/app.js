@@ -3,6 +3,8 @@ console.log('WhatsApp')
 const app = new Vue({
   el: "#app",
   data: {
+    currentChat: [],
+
     contacts: [
       {
         name: 'Michele',
@@ -95,8 +97,10 @@ const app = new Vue({
     ],
   },
   methods: {
-
-  }
-})
+    mexSent: function () {
+      if (this.messages.status === sent);
+      this.messages.push()
+    }
+  })
 
 console.log(app)
