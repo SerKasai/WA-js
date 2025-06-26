@@ -158,9 +158,10 @@ img {
 
 .active-chat {
   display: flex;
-  padding: 10px;
+  padding: 0 10px;
   gap: 10px;
   width: 100%;
+  height: 67px;
   cursor: pointer;
   flex-wrap: wrap;
   flex-direction: row;
@@ -207,6 +208,7 @@ img {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
+  gap: 3px;
 }
 
 .main-page {
@@ -219,39 +221,39 @@ img {
   /* color: rgb(226, 12, 12); */
 }
 
-.sent {
+/* .sent {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
   row-gap: 3px;
-}
+} */
 
-.right-chat {
+/* .right-chat {
   background-color: white;
   color: #242626;
   padding: 7px;
   border-radius: 10px;
-}
+} */
 
-.receive {
+/* .received {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
   row-gap: 3px;
-}
+} */
 
-.left-chat {
+/* .left-chat {
   background-color: #242626;
   color: white;
   padding: 7px;
   border-radius: 10px;
-}
+} */
 
 #writing {
   width: 96%;
-  height: 52px;
+  height: 50px;
   padding: 10px 20px;
   margin: 10px;
   background-color: #242626;
@@ -264,15 +266,38 @@ img {
   display: flex;
   align-items: center;
   padding: 10px;
+  width: 100%;
 }
 
 .input-mex i {
-  font-size: 25px;
-  background-color: #242626;
+  font-size: 20px;
   border-radius: 50%;
   color: white;
   padding: 15px;
   cursor: pointer;
+  background-color: #242626;
+}
+
+.message {
+  border-radius: 10px;
+  box-shadow: 0 1px 1px #aaa;
+  padding: 7px;
+}
+
+.message.sent {
+  background-color: white;
+  align-self: flex-end;
+}
+
+.message.received {
+  background-color: #242626;
+  color: #04AA6D;
+  align-self: flex-start;
+}
+
+.message.received+.message.sent,
+.message.sent+.message.received {
+  margin-top: 20px;
 }
 
 .messages {
@@ -282,4 +307,5 @@ img {
   filter: brightness(0.7);
   flex-direction: column;
   justify-content: flex-end;
+  gap: 3px;
 }

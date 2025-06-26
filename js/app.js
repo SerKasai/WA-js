@@ -100,7 +100,8 @@ const app = new Vue({
     mexSent: function () {
       if (this.messages.status === sent);
       this.messages.push()
-    }
-  })
+    },
+  }
+})
 
 console.log(app)
