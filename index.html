@@ -51,7 +51,8 @@
       </div>
 
       <ul class="chat-list">
-        <li id="chat" v-for="(element, index) in contacts" :key="element.name">
+        <li id="chat" v-for="element in contacts" @click="selectContact(element)" class="contact"
+          :class="activeContact === element ? 'active' : ''">
           <img id="image" :src="element.avatar" alt="element.name">
           <div id="last-mex">
             <h2>{{element.name}}</h2>
@@ -64,7 +65,13 @@
       </ul>
     </div>
 
-    <div class="main-page" v-for="(element, index) in contacts" :key="element.name" v-if="element.visible">
+    <div class="welcome-page" v-if="activeContact === null">
+      <h3>Benvenuto su WhatsApp!</h3>
+      <p><i class="fa-solid fa-lock" style="padding-right: 20px;"></i>I tuoi messaggi personali sono protetti dalla
+        crittografia end-to-end.</p>
+    </div>
+    <div class="main-page" v-for="(element, index) in contacts" v-if="activeContact === element">
+
 
       <div class="active-chat">
         <div class="active-contacts">
@@ -80,24 +87,15 @@
         </div>
       </div>
       <div class="current-chat">
-        <div class="messages">
-          <div class="message received">
-            <p>Ciao come stai?</p>
-          </div>
-          <div class="message received">
-            <p>Ti disturbo?</p>
-          </div>
-          <div class="message received">
-            <p>Heyyyyy</p>
-          </div>
-          <div class="message sent">
-            <p>No, dimmi pure</p>
-          </div>
+        <div v-for="element in activeContact.messages" class="message" :class="element.status">
+          {{element.text}}
+          <span>{{element.date}}</span>
         </div>
 
         <div class="input-mex">
-          <input type="text" id="writing" placeholder="Scrivi un messaggio">
-          <i class="fa-solid fa-arrow-turn-up"></i>
+          <input type="text" id="writing" placeholder="Scrivi un messaggio" v-model="newMex" @keyup.enter="addMex"
+            @keyup.enter="botResponse">
+          <i class="fa-solid fa-arrow-turn-up" @click="addMex"></i>
         </div>
       </div>
     </div>

@@ -3,8 +3,8 @@ console.log('WhatsApp')
 const app = new Vue({
   el: "#app",
   data: {
-    currentChat: [],
-
+    activeContact: null,
+    newMex: '',
     contacts: [
       {
         name: 'Michele',
@@ -31,7 +31,7 @@ const app = new Vue({
       {
         name: 'Fabio',
         avatar: 'img/new-team-member-02.jpg',
-        visible: false,
+        visible: true,
         messages: [
           {
             date: '16:30',
@@ -53,7 +53,7 @@ const app = new Vue({
       {
         name: 'Samuele',
         avatar: 'img/new-team-member-04.jpg',
-        visible: false,
+        visible: true,
         messages: [
           {
             date: '10:10',
@@ -75,7 +75,7 @@ const app = new Vue({
       {
         name: 'Luisa',
         avatar: 'img/barbara-ramos-graphic-designer.jpg',
-        visible: false,
+        visible: true,
         messages: [
           {
             date: '15:30',
@@ -97,11 +97,23 @@ const app = new Vue({
     ],
   },
   methods: {
-    mexSent: function () {
-      if (this.messages.status === sent);
-      this.messages.push()
+    selectContact: function (contact) {
+      this.activeContact = contact;
+      console.log(this.activeContact)
     },
+    addMex: function () {
+      if (this.newMex !== '') {
+        this.activeContact.messages.push({ date: '', text: this.newMex, status: 'sent' });
+        this.newMex = '';
+      }
+    },
+    botResponse: function () {
+      if (this.addMex) {
+        this.activeContact.messages.push({ date: '', text: 'Suca', status: 'received' });
+      }
+    }
   }
+
 })
 
 console.log(app)
